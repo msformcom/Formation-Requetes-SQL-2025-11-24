@@ -1,0 +1,7 @@
+-- Par pays et par region => CA , nombre de commandes, Moyenne du montant des ventes
+-- Classement des pays par CA
+-- Classement des pays par nbCommandes
+-- 
+-- percent de CA par Pays
+-- Dans chaque Pays => Classement des régions + percent du CA d'un region / Pays
+-- Pour chaque région => classement de la région + percent du CA de cette region (Independament du Pays)
