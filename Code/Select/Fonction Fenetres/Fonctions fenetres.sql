@@ -13,7 +13,8 @@ SELECT * ,
 		LAG(unitprice) OVER (PARTITION BY Categoryid ORDER BY unitprice ASC ) AS PrixduPrecedent,
 		LEAD(unitprice) OVER (PARTITION BY Categoryid ORDER BY unitprice ASC ) AS PrixduSuivant,
 		AVG(unitprice) OVER (PARTITION BY Categoryid ORDER BY unitprice ASC ROWS BETWEEN 3 PRECEDING AND 1 PRECEDING ) AS TT,
-		SUM(unitprice) OVER (PARTITION BY Categoryid ORDER BY unitprice ASC ROWS BETWEEN UNBOUNDED PRECEDING AND 1 PRECEDING ) AS T2
+		-- Cumul sur l'ensemble des precedents
+		SUM(unitprice) OVER (PARTITION BY Categoryid ORDER BY unitprice ASC ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW ) AS T2
 FROM Production.Products) AS T
 -- WHERE RowNumberPrix<=5
 ORDER BY categoryid, unitprice
