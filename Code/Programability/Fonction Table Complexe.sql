@@ -25,3 +25,7 @@ BEGIN
 	END
 	RETURN
 END
+
+-- Liste des semaine qui suivent
+SELECT DATEADD(week,n, GETDATE()),n
+FROM dbo.range(0,10,1)
