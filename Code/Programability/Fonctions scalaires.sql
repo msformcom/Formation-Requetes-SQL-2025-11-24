@@ -1,4 +1,5 @@
 -- Programibilté
+-- Fonction scalaire => Paramètres => 1 seule Valeur
 -- Order de prix => 0 - Pas cher - 20 - Moyen - 40 Cher
 SELECT * ,
 	Sales.IndicPrix(unitprice) AS indicPrix -- Prend en paramètre un nombre => NVARCHAR,
